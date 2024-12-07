@@ -1,0 +1,197 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("https://res.cloudinary.com/dshmwg7vw/image/upload/v1550486966/OCCNFD0.jpg");
+  background-size: contain;
+  background-repeat: repeat;
+  font-family: "Permanent Marker", cursive;
+  position: relative;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper,
+.button-wrapper {
+  text-align: center;
+  margin: 10px;
+}
+
+.outside-wrapper {
+  margin-bottom: 20px;
+  text-align:center;
+}
+
+.outside-wrapper:nth-child(2) {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  max-height: 300px;
+}
+
+.outside-wrapper:nth-child(3) {
+  margin-bottom: auto;
+  height: 178px;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+#statusMessage {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  height: 94px;
+}
+
+svg {
+  transform: rotate(-1deg);
+}
+
+.lives {
+  width: 40px;
+  height: auto;
+}
+
+.hiddenLife {
+  display: inline-block;
+  animation: lifeAway 0.6s forwards;
+}
+
+@keyframes lifeAway {
+  0% {
+    opacity: 1;
+  }
+
+  10% {
+    transform: scale(1.5) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(0.5) rotate(720deg);
+  }
+
+  100% {
+    transform: scale(0) rotate(720deg);
+    opacity: 0;
+    display: none;
+  }
+}
+
+#categoryName {
+  font-size: 20px;
+  margin: 0 5px 5px 5px;
+}
+
+#warningText {
+  color: rgb(239, 83, 80);
+}
+
+.warning {
+  height: 20px;
+}
+
+#guessWrapper p {
+  font-size: 40px;
+  display: inline-block;
+  letter-spacing: 15px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  color: green;
+}
+
+.inside-wrapper {
+  text-align: center;
+}
+
+.inside-wrapper:first-child {
+  width: 250px;
+}
+
+.inside-wrapper:last-child {
+  width: 400px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.inside-wrapper div:last-child {
+  margin-top: auto;
+}
+
+#wrongLetters {
+  text-align: right;
+}
+
+#wrongLetters span {
+  text-align: right;
+  color: rgb(239, 83, 80);
+  letter-spacing: 5px;
+}
+
+@media (max-width: 470px) {
+  #categoryName {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .lives {
+    width: 25px;
+    height: auto;
+  }
+
+  #guessWrapper p {
+    font-size: 20px;
+  }
+}
+
+input {
+  border-radius: 7px;
+  border-style: none;
+  border: 1px solid gray;
+  text-align: center;
+  transition: 0.2s linear;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid green;
+}
+
+button {
+  transition: 0.2s linear;
+  outline: none;
+  border-style: none;
+  background-color: darkgray;
+  color: black;
+  border-radius: 7px;
+}
+
+button:hover,
+button:focus {
+  background-color: green;
+  outline: none;
+  color: white;
+}
+
+input,
+button {
+  padding: 5px 10px;
+  box-sizing: border-box;
+  letter-spacing: 3px;
+}

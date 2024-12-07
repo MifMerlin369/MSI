@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="landing-page">
+                <h1>Snake Game</h1>
+                <p>User arrow keys <img src="https://cdn-icons-png.flaticon.com/512/1782/1782564.png" alt=""> for playing</p>
+                <button onclick="startGame()">Start Game</button>
+            </div>
+
+            <div class="game-container" style="display: none;">
+                <div class="title">
+                    <h1>Snake Game</h1>
+                    <p>User arrow keys <img src="https://cdn-icons-png.flaticon.com/512/1782/1782564.png" alt=""> for playing</p>
+
+                    <h2>Score: <span id="score">00</span></h2>
+                    <button onclick="location.reload()">Exit Game</button>
+                </div>
+                <div class="game">
+                    <canvas width="600" height="600" id="game"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JS -->
+    <script src="./script.js"></script>
+</body>
+</html>

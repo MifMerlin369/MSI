@@ -1,0 +1,378 @@
+:root {
+    --brown-bg: #e6ccb2;
+    --brown-text: #7f5539;
+
+    --red-bg: #fae4dc;
+    --red-text: #eb6f6f;
+
+    --yellow-bg: #f3f1e5;
+    --yellow-text: #e7cc43;
+
+    --blue-bg: #e1ecf7;
+    --blue-text: #71a5de;
+
+    --green-bg: #ebfaea;
+    --green-text: #64ad61;
+
+    --background-color: var(--blue-bg);
+    --text-color: var(--blue-text);
+
+    --transition-duration: 1000ms;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    transition: background-color var(--transition-duration);
+    height: 100svh;
+    margin: 0;
+
+    display: flex;
+    align-items: flex-end;
+    transition: all var(--transition-duration);
+    overflow: hidden;
+}
+
+.dot-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+
+    background-image: radial-gradient(white 1.2px, rgba(128, 128, 128, 0.137) 1.2px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+}
+
+h1 {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50%;
+    color: var(--text-color);
+    z-index: 20;
+    font-size: 3rem;
+
+    transition: all var(--transition-duration);
+}
+
+button:hover,
+h1:hover {
+    color: white;
+    transition: none;
+}
+
+main {
+    margin-top: auto;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+
+    transition: opacity calc(var(--transition-duration) / 2) ease-in;
+}
+
+button {
+    color: var(--text-color);
+    font-weight: bolder;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: color var(--transition-duration);
+    background-color: transparent;
+}
+
+/* side bar */
+
+side {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-size: 30px;
+    font-weight: 500;
+    height: 100%;
+    color: var(--text-color);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    text-align: center;
+    background-color: inherit;
+
+    translate: 100vw;
+
+    transition:
+        color var(--transition-duration),
+        translate var(--transition-duration);
+}
+
+/* initial setup popup */
+
+.initial-setup * {
+    margin: 0;
+}
+
+.initial-setup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 65%;
+    z-index: 3;
+    padding: 50px;
+
+    background-color: #2F4858;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: var(--yellow-text);
+    border-radius: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    overflow: auto;
+    gap: 3rem;
+
+    transition:
+        color var(--transition-duration);
+}
+
+.initial-setup div {
+    font-size: 2rem;
+}
+
+.initial-setup h2 {
+    margin-bottom: 0.75rem;
+}
+
+.initial-setup button {
+    font-size: 2.25rem;
+    color: inherit;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.player-number input {
+    display: none;
+}
+
+.player-number label {
+    padding-inline: 1rem;
+    aspect-ratio: 1;
+}
+
+.player-number input:checked+label {
+    border-bottom: var(--yellow-text) 5px solid;
+}
+
+.player-number-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.opponents-section {
+    color: var(--red-text);
+}
+
+.opponents-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.opponents-container button {
+    margin: 0;
+}
+
+.opponent {
+    border: var(--red-text) 2px solid;
+    border-radius: 0.75rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1rem;
+}
+
+.initial-setup svg {
+    fill: var(--red-text);
+}
+
+.opponent .robot {
+    width: 3rem;
+}
+
+.opponent .delete {
+    padding: 0;
+    padding-left: 1rem;
+}
+
+.opponent .delete svg {
+    width: 2rem;
+}
+
+.initial-setup .play {
+    color: var(--green-text);
+}
+
+.opponent select {
+    appearance: none;
+    width: max-content;
+    background: var(--red-bg);
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    color: inherit;
+}
+
+.initial-setup button:hover {
+    color: white;
+}
+
+.initial-setup button:hover svg {
+    fill: white;
+}
+
+.initial-setup label:hover {
+    color: white;
+}
+
+.add-opponent {
+    order: 999;
+}
+
+.delete-opponent {
+    order: 0;
+}
+
+/* scoreboard */
+
+.scoreboard {
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+
+    border: .125rem solid var(--text-color);
+    border-radius: 1rem;
+}
+
+.scoreboard .dot {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.scoreboard .dot[data-ai='true'] {
+    background-image: url(../assets/robot-icon.svg);
+    background-blend-mode: overlay;
+    background-size: 1.4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.scoreboard>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.blue .dot {
+    background-color: var(--blue-text);
+}
+
+.yellow .dot {
+    background-color: var(--yellow-text);
+}
+
+.red .dot {
+    background-color: var(--red-text);
+}
+
+.green .dot {
+    background-color: var(--green-text);
+}
+
+.instruction-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.instruction-button:hover .question-mark text {
+    fill: white;
+}
+
+.instruction-popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(80%, 500px);
+    height: 100%;
+    border-radius: 0.3rem;
+    background-color: #f9f9f9;
+    color: var(--yellow-text);
+    padding: 2rem;
+    padding-right: 3rem;
+    z-index: 1;
+    overflow: auto;
+    gap: 1rem;
+    align-content: center;
+}
+
+
+.instruction-popup p {
+    font-size: 1rem;
+    text-align: left;
+}
+
+.close-button:hover .close-icon path {
+    fill: white;
+}
+
+.show-instruction {
+    display: grid;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    margin: 10px;
+    scale: 1.2;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    fill: var(--blue-bg);
+}

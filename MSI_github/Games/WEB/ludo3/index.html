@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ludo Master</title>
+    <script defer src="./js/app.js"></script>
+    <script defer src="./js/confetti.js"></script>
+    <link rel="shortcut icon" href="./assets/images/game-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <img id ="title-on-board" class="title" src="./assets/images/game-title.png" alt="Ludo Master Title">
+    </header>
+    <section class="game-container">
+      <section id="game-area">
+        <h2 id="message">Game On!!</h2>
+        <section class="board">
+          <section class="player-names">
+            <h3 class="player-name">Donatello</h4>
+            <h3 class="player-name">Michaelangelo</h4>
+          </section>
+          <div id="lvl1" class="flr">
+            <div id="green-player" class="depot">
+              <div id="green-big" class="big-sqr">
+                <div id="88" class="path small-sqr"></div>
+                <div id="89" class="path small-sqr"></div>
+                <div id="90" class="path small-sqr"></div>
+                <div id="91" class="path small-sqr"></div>
+              </div>
+            </div>
+            <div id="yellow-gateway" class="pathway">
+              <div id="5" class="path"></div>
+              <div id="6" class="path"></div>
+              <div id="7" class="path"></div>
+              <div id="4" class="path"></div>
+              <div id="52" class="path ylw-path"></div>
+              <div id="8" class="path ylw-path"></div>
+              <div id="3" class="path"></div>
+              <div id="53" class="path ylw-path"></div>
+              <div id="9" class="path"></div>
+              <div id="2" class="path"></div>
+              <div id="54" class="path ylw-path"></div>
+              <div id="10" class="path"></div>
+              <div id="1" class="path"></div>
+              <div id="55" class="path ylw-path"></div>
+              <div id="11" class="path"></div>
+              <div id="0" class="path"></div>
+              <div id="56" class="path ylw-path"></div>
+              <div id="12" class="path"></div>
+            </div>
+            <div id="yellow-player" class="depot">
+              <div id="yellow-big" class="big-sqr">
+                <div id="76" class="path small-sqr"></div>
+                <div id="77" class="path small-sqr"></div>
+                <div id="78" class="path small-sqr"></div>
+                <div id="79" class="path small-sqr"></div>
+              </div>
+            </div>
+          </div>
+          <div id="lvl2" class="flr">
+            <div id="green-gateway" class="pathway">
+              <div id="46" class="path"></div>
+              <div id="47" class="path grn-path"></div>
+              <div id="48" class="path"></div>
+              <div id="49" class="path"></div>
+              <div id="50" class="path"></div>
+              <div id="51" class="path"></div>
+              <div id="45" class="path"></div>
+              <div id="67" class="path grn-path"></div>
+              <div id="68" class="path grn-path"></div>
+              <div id="69" class="path grn-path"></div>
+              <div id="70" class="path grn-path"></div>
+              <div id="71" class="path grn-path"></div>
+              <div id="44" class="path"></div>
+              <div id="43" class="path"></div>
+              <div id="42" class="path"></div>
+              <div id="41" class="path"></div>
+              <div id="40" class="path"></div>
+              <div id="39" class="path"></div>
+            </div>
+            <div id="homes">
+              <div id="home1">
+                <div id="73" class="path home"></div>
+              </div>
+              <div id="home2">
+                <div id="72" class="path home"></div>
+                <div id="74" class="path home"></div>
+              </div>
+              <div id="home3">
+                <div id="75" class="path home"></div>
+              </div>
+            </div>
+            <div id="blue-gateway" class="pathway">
+              <div id="13" class="path"></div>
+              <div id="14" class="path"></div>
+              <div id="15" class="path"></div>
+              <div id="16" class="path"></div>
+              <div id="17" class="path"></div>
+              <div id="18" class="path"></div>
+              <div id="61" class="path blu-path"></div>
+              <div id="60" class="path blu-path"></div>
+              <div id="59" class="path blu-path"></div>
+              <div id="58" class="path blu-path"></div>
+              <div id="57" class="path blu-path"></div>
+              <div id="19" class="path"></div>
+              <div id="25" class="path"></div>
+              <div id="24" class="path"></div>
+              <div id="23" class="path"></div>
+              <div id="22" class="path"></div>
+              <div id="21" class="path blu-path"></div>
+              <div id="20" class="path"></div>
+            </div>
+          </div>
+          <div id="lvl3" class="flr">
+            <div id="red-player" class="depot">
+              <div id="red-big" class="big-sqr">
+                <div id="84" class="path small-sqr"></div>
+                <div id="85" class="path small-sqr"></div>
+                <div id="86" class="path small-sqr"></div>
+                <div id="87" class="path small-sqr"></div>
+              </div>
+            </div>
+            <div id="red-gateway" class="pathway">
+              <div id="38" class="path"></div>
+              <div id="66" class="path red-path"></div>
+              <div id="26" class="path"></div>
+              <div id="37" class="path"></div>
+              <div id="65" class="path red-path"></div>
+              <div id="27" class="path"></div>
+              <div id="36" class="path"></div>
+              <div id="64" class="path red-path"></div>
+              <div id="28" class="path"></div>
+              <div id="35" class="path"></div>
+              <div id="63" class="path red-path"></div>
+              <div id="29" class="path"></div>
+              <div id="34" class="path red-path"></div>
+              <div id="62" class="path red-path"></div>
+              <div id="30" class="path"></div>
+              <div id="33" class="path"></div>
+              <div id="32" class="path"></div>
+              <div id="31" class="path"></div>
+            </div>
+            <div id="blue-player" class="depot">
+              <div id="blue-big" class="big-sqr">
+                <div id="80" class="path small-sqr"></div>
+                <div id="81" class="path small-sqr"></div>
+                <div id="82" class="path small-sqr"></div>
+                <div id="83" class="path small-sqr"></div>
+              </div>
+            </div>
+          </div>
+          <section class="player-names">
+            <h3 class="player-name">Raphael</h4>
+            <h3 class="player-name">Leonardo</h4>
+          </section>
+        </section>
+      </section>
+      <section class="dice-container">
+        <div id="dice-value" class="dice"></div>
+        <button id="dice-button" class="dice">🎲</button>
+      </section>   
+      <button class="btn" id="reset">Start Over</button>
+    </section>
+    <div id="title-screen" class="overlay">
+      <img class="title" src="./assets/images/game-title.png" alt="Ludo Master Title">
+      <div id="icons">
+        <img id="donatello" class="icon" src="./assets/images/pieces/donatello.png" alt="donatello cartoon face">
+        <img id="michaelangelo" class="icon" src="./assets/images/pieces/michaelangelo.png" alt="michaelangelo cartoon face">
+        <img id="leonardo" class="icon" src="./assets/images/pieces/leonardo.png" alt="leonardo cartoon face">
+        <img id="raphael" class="icon" src="./assets/images/pieces/raphael.png" alt="raphael cartoon face">
+      </div>
+      <section id="mode">
+        <button id="instr-btn" class="btn">How to play</button>
+        <select id="select-players">
+          <option class="option" value="" selected disabled>Select Players</option>
+          <option class="option" value="2">2 Players (Donatello vs Leonardo)</option>
+          <option class="option" value="4">4 Players (Ninja Turtles)</option>
+          <option class="option" value="1">Play Solo (Play as Donatello)</option>
+        </select>
+        <button id="start" disabled class="btn">Start</button>
+      </section>
+    </div>
+    <div id="how-to-play" class="overlay">
+      <h2 class="text-on-overlay">How to Play!!</h2>
+      <div class="step-by-step">
+        <ol id ="tldr" class="instr-list">
+          <li class="instr-steps">Read the detailed rules of the game <a id="link-instr" href="#instructions">here</a> (if you really need to...)</li>
+          <li class="instr-steps">Select game mode: 
+            <ul>
+              <li>Play Solo with computer as the 2nd player</li>
+              <li>2 Players taking their turns alternately</li>
+              <li>4 Players taking their turns sequentially</li>
+            </ul>
+          </li>
+          <li class="instr-steps">Click on the Start Button to start the game</li>
+          <li class="instr-steps">Players take turns clicking on the die to roll a number (1-6)</li>
+          <li class="instr-steps">Follow the instructions as per the message displayed on top of the board after every roll</li>
+          <li class="instr-steps">Player 1 ( Donatello) gets the first roll</li>
+          <li class="instr-steps">To move a piece out of the starting area, a player must roll a SIX</li>
+          <li class="instr-steps">Once their pieces are on the starting square, players move their pieces according to the number rolled on the die</li>
+          <li class="instr-steps">If a player rolls a six, they get an extra turn (rolling SIX 3 times in a row will cause you to lose that turn)</li>
+          <li class="instr-steps">If you are playing solo, computer (Leonardo) will automatically take its turn</li>
+          <li class="instr-steps">Land in a square with a single piece of another player to send the landed piece back to depot (and get a bonus turn)</li>
+          <li class="instr-steps">Pieces travel around the board and enter their home pathway and reach home</li>
+          <li class="instr-steps">First player to move all 4 pieces home, becomes the Ludo Master</li>
+          <li class="instr-steps">Easter Egg: A play/pause button that plays (and then pauses as well) the theme music from TMNT cartoon (1987) (00:58). Find it and enjoy the music!!</li>
+        </ol>
+      </div>
+      <button id="back" class="btn">Back</button>
+    </div>
+    <div id="instructions" class="overlay">
+      <h2 id="instr-title" class="text-on-overlay">Detailed Rules/Instructions</h2>
+      <div id="step-by-step">
+        <h3>Game Setup</h3>
+        <ol class="instr-list">
+          <li class="instr-steps">A Ludo board is split into 4 arms. Each arm has 3 columns of squares where the outer columns are part of the main pathway and the center,('home pathway',) is the same color as one of the player’s depot</li>
+          <li class="instr-steps">You have 4 pieces each to play with inside your depot</li>
+        </ol>
+        <h3>First Moves</h3>
+        <ol class="instr-list">
+          <li class="instr-steps">Roll a 6 on the die to move a piece out of your depot to 'starting square' to make it an "active piece"</li>
+          <li class="instr-steps">If you roll a 1-5, your turn ends without moving a piece</li>
+          <li class="instr-steps">Any time you roll a 6, you earn a bonus roll. </li>
+          <li class="instr-steps">After any time you roll a 6, on your bonus roll, if you roll another 6, you get another bonus roll.</li>
+          <li class="instr-steps">If you roll three 6s in a row, then you lose your roll and your turn ends</li>
+          <li class="instr-steps">Once you move a piece after rolling any number besides a 6, your turn ends</li>
+          <li class="instr-steps">When you roll a 1–5, move the piece on the starting square that number of squares clockwise around the board’s main pathway</li>
+        </ol> 
+        <h3>Gameplay</h3>
+        <ol class="instr-list">
+          <li class="instr-steps">Roll the die to move a piece during each of your turns</li>
+          <li class="instr-steps">Any time you roll a 6, you have the option to move a piece out of your depot onto the main pathway or move a different piece around the board</li>
+          <li class="instr-steps">Land in a square with an opponent's single piece for a 'Knock Off Bonus' and to send it back to their depot. You will get a bonus turn and they will need to roll 6 to make that same piece active again</li>
+          <li class="instr-steps">If you are landing in a square where there are 2 or more pieces then, your piece can move and cohabit that square</li>
+          <li class="instr-steps">If a square has a total of 4 pieces, then it is 'blocked' and can't accomodate any more pieces</li>
+          <li class="instr-steps">If your move is landing you on a blocked square, you can't make that move and if you don't have any other active piece then you lose your turn</li>
+        </ol>
+        <h3>Win Conditions</h3>
+        <ol class="instr-list">
+          <li class="instr-steps">Move your pieces into your home pathway once you go around the board</li>
+          <li class="instr-steps">Only pieces that match the color of the home pathway are allowed to move into them</li>
+          <li class="instr-steps">Once you move a piece into the home pathway, it can’t be 'Knocked Off' by any other players</li>
+          <li class="instr-steps">Roll the exact number you need to get pieces into the home square. If you roll a lower number, you’re still able to move that many squares forward, but if you roll higher, you must choose a different piece to move</li>
+          <li class="instr-steps">Win the game by moving all 4 of your pieces to the 'Home Square' before your opponents</li>
+        </ol>
+      </div>
+      <button id="back-to-start" class="btn">Back</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,289 @@
+<html>
+
+<head>
+    <title>Ludo 3D</title>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js' defer> </script>
+    <script type='text/javascript' src='./js/utils.js' defer> </script>
+    <script type='text/javascript' src='./js/constants.js' defer> </script>
+    <script type='text/javascript' src='./js/initTiles.js' defer> </script>
+    <script type='text/javascript' src='./js/game.js' defer> </script>
+    <script type='text/javascript' src='./js/computerOpponents.js' defer> </script>
+    <script type='text/javascript' src='./js/dice.js' defer> </script>
+    <script type='text/javascript' src='./js/setupPage.js' defer> </script>
+    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'>
+    <link rel='stylesheet' type='text/css' href='./css/style.css'>
+    <link rel='stylesheet' type='text/css' href='./css/dice.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    </link>
+</head>
+
+<body>
+    <header>
+        <h1>Ludo 3D</h1>
+    </header>
+
+    <div class="initial-setup">
+
+        <section class="player-number">
+            <h2>Select number of players</h2>
+
+            <div class="player-number-row">
+                <input type="radio" id="players-2" name="number-players">
+                <label for="players-2">2</label>
+
+                <input type="radio" id="players-3" name="number-players">
+                <label for="players-3">3</label>
+
+                <input type="radio" id="players-4" name="number-players" checked>
+                <label for="players-4">4</label>
+            </div>
+        </section>
+
+
+        <section class="opponents-section">
+            <h2>Add computer opponents</h2>
+            <div class="opponents-container">
+                <button class="delete-opponent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M0 9h24v6h-24z" />
+                    </svg>
+                </button>
+
+                <button class="add-opponent"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" />
+                    </svg></button>
+
+                <div class="opponent">
+                    <svg class="robot" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                        viewBox="0 0 48 48">
+                        <path
+                            d="M42.466,17.023c-0.839,0-1.52,0.685-1.52,1.531c0,2.359-1.108,4.552-2.946,6.034V7.059C38,5.921,36.956,5,35.666,5H12.333 C11.044,5,10,5.921,10,7.059v18.856C6.401,28.048,4,32.256,4,36.5C4,37.329,4.672,38,5.5,38S7,37.329,7,36.5 c0-2.515,1.177-5.079,3-6.826v8.267C10,39.079,11.044,40,12.333,40H16v4.5c0,0.829,0.672,1.5,1.5,1.5s1.5-0.671,1.5-1.5V40h10v4.5 c0,0.829,0.672,1.5,1.5,1.5s1.5-0.671,1.5-1.5V40h3.667C36.956,40,38,39.079,38,37.941v-9.725c3.665-1.905,5.987-5.6,5.987-9.662 C43.987,17.708,43.305,17.023,42.466,17.023z M17.5,12c0.828,0,1.5,0.672,1.5,1.5S18.328,15,17.5,15S16,14.328,16,13.5 S16.672,12,17.5,12z M21,31.5c0,0.276-0.224,0.5-0.5,0.5H19v1.5c0,0.276-0.224,0.5-0.5,0.5h-1c-0.276,0-0.5-0.224-0.5-0.5V32h-1.5 c-0.276,0-0.5-0.224-0.5-0.5v-1c0-0.276,0.224-0.5,0.5-0.5H17v-1.5c0-0.276,0.224-0.5,0.5-0.5h1c0.276,0,0.5,0.224,0.5,0.5V30h1.5 c0.276,0,0.5,0.224,0.5,0.5V31.5z M27.317,20.142c-0.908,0.303-1.863,0.454-2.817,0.454s-1.909-0.151-2.817-0.454l-0.657-0.219 c-0.786-0.262-1.211-1.112-0.948-1.897c0.262-0.786,1.11-1.212,1.897-0.948l0.657,0.219c1.205,0.401,2.531,0.401,3.736,0 l0.657-0.219c0.787-0.263,1.635,0.162,1.897,0.948c0.263,0.786-0.162,1.635-0.948,1.897L27.317,20.142z M30,34 c-1.105,0-2-0.895-2-2c0-1.105,0.895-2,2-2s2,0.895,2,2C32,33.105,31.105,34,30,34z M30.5,15c-0.828,0-1.5-0.672-1.5-1.5 s0.672-1.5,1.5-1.5s1.5,0.672,1.5,1.5S31.328,15,30.5,15z">
+                        </path>
+                    </svg>
+                    <select>
+                        <option>Easy</option>
+                        <option>Hard</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <button class="play">Play!</button>
+
+        <button class="instruction-button" onclick="toggleInstructionPopup()">
+            <svg class="question-mark" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"
+                style="fill:#71a5de">
+                <text x="80%" y="40%" dy=".3em" font-size="16" text-anchor="middle">?</text>
+            </svg>
+        </button>
+
+        <div class="instruction-popup" id="instructionPopup">
+            <p>In the first step, you choose the number of players and decide how many opponents will be controlled by
+                the computer.</p>
+            <p>Next, a game of Ludo will be played. The first move can be made after rolling a six. After each rolling
+                of a six, you get an extra turn. The player who gets all their tokens to the central area first wins.
+            </p>
+            <p>If a player lands on the same space as an opponent, it sends the opponent's token back to the starting
+                area.</p>
+            <p>There are "safe spaces" on the starting point and on colored squares on the board.</p>
+            <p>A "safe space" is also created when two tokens of the same player occupy the same space simultaneously.
+            </p>
+            <button class="close-button" onclick="toggleInstructionPopup()">
+                <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    style="fill:#71a5de">
+                    <path
+                        d="M19 6.41l-1.41-1.41L12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+                </svg>
+            </button>
+        </div>
+
+    </div>
+
+    <main>
+        <x3d width='950px' height='800px'>
+            <scene>
+                <NavigationInfo type='"examine" "any"' headlight="false" reverseScroll='true'></NavigationInfo>
+
+                <ImageTexture DEF='WOOD' url='"./assets/white-wooden-floor.jpg"'>
+                </imagetexture>
+
+                <!-- viewpoints -->
+                <Viewpoint def='far-viewpoint' class='far-viewpoint' position="-45.45171 21.80305 17.91539"
+                    orientation="-0.19828 -0.95682 -0.21254 1.42313" zNear="0" zFar="100"
+                    centerOfRotation="7.00000 0.50000 7.00000" fieldOfView="0.78540" description="" bind="true">
+                </Viewpoint>
+
+                <Viewpoint def='blue-viewpoint' class='blue-viewpoint' position="-9.99837 13.56152 0.54436"
+                    orientation="-0.19685 -0.93199 -0.30437 2.01508" zNear="0" zFar="100" centerOfRotation="7 0.5 7"
+                    fieldOfView="0.78540" description=""></Viewpoint>
+
+                <Viewpoint def='red-viewpoint' class='red-viewpoint' position="-4.94686 13.23193 21.01406"
+                    orientation="-0.61577 -0.74915 -0.24414 0.93275" zNear="0" zFar="100.00000"
+                    centerOfRotation="7.00000 0.50000 7.00000" fieldOfView="0.78540" description=""></Viewpoint>
+
+                <Viewpoint def='green-viewpoint' class='green-viewpoint' position="23.92938 13.03159 14.58805"
+                    orientation="-0.38214 0.87186 0.30633 1.28666" zNear="0" zFar="100"
+                    centerOfRotation="7.00000 0.50000 7.00000" fieldOfView="0.78540" description=""></Viewpoint>
+
+                <Viewpoint def='yellow-viewpoint' class='yellow-viewpoint' position="19.28017 13.07322 -8.72554"
+                    orientation="-0.12169 0.95565 0.26818 2.48122" zNear="0" zFar="100"
+                    centerOfRotation="7.00000 0.50000 7.00000" fieldOfView="0.78540" description=""></Viewpoint>
+
+                <!-- lights -->
+                <PointLight ambientIntensity='0.5' attenuation='1,0,0' color='1,1,1' global='false' intensity='1'
+                    location='7.5 10 7.5' on='true' radius='100'></PointLight>
+
+                <!-- table -->
+                <transform translation="7 -2 7">
+                    <inline url='./models/table.x3d'></inline>
+                </transform>
+
+                <!-- blue tokens -->
+                <transform id='blue-token-1' translation="3 1 3" visible="false">
+                    <inline nameSpaceName="blue-token-1" mapDEFToID="true" url='./models/BluePawn.x3d'></inline>
+                </transform>
+
+                <transform id='blue-token-2' translation="2 1 2" visible="false">
+                    <inline nameSpaceName="blue-token-2" mapDEFToID="true" url='./models/BluePawn.x3d'></inline>
+                </transform>
+
+                <transform id='blue-token-3' translation="2 1 3" visible="false">
+                    <inline nameSpaceName="blue-token-3" mapDEFToID="true" url='./models/BluePawn.x3d'></inline>
+                </transform>
+
+                <transform id='blue-token-4' translation="3 1 2" visible="false">
+                    <inline nameSpaceName="blue-token-4" mapDEFToID="true" url='./models/BluePawn.x3d'></inline>
+                </transform>
+
+                <!-- red tokens -->
+                <transform id='red-token-1' translation="3 1 11" visible="false">
+                    <inline nameSpaceName="red-token-1" mapDEFToID="true" url='./models/RedPawn.x3d'></inline>
+                </transform>
+
+                <transform id='red-token-2' translation="2 1 12" visible="false">
+                    <inline nameSpaceName="red-token-2" mapDEFToID="true" url='./models/RedPawn.x3d'></inline>
+                </transform>
+
+                <transform id='red-token-3' translation="2 1 11" visible="false">
+                    <inline nameSpaceName="red-token-3" mapDEFToID="true" url='./models/RedPawn.x3d'></inline>
+                </transform>
+
+                <transform id='red-token-4' translation="3 1 12" visible="false">
+                    <inline nameSpaceName="red-token-4" mapDEFToID="true" url='./models/RedPawn.x3d'></inline>
+                </transform>
+
+
+                <!-- yellow tokens -->
+                <transform id='yellow-token-1' translation="11 1 3" visible="false">
+                    <inline nameSpaceName="yellow-token-1" mapDEFToID="true" url='./models/YellowPawn.x3d'></inline>
+                </transform>
+
+                <transform id='yellow-token-2' translation="12 1 2" visible="false">
+                    <inline nameSpaceName="yellow-token-2" mapDEFToID="true" url='./models/YellowPawn.x3d'></inline>
+                </transform>
+
+                <transform id='yellow-token-3' translation="12 1 3" visible="false">
+                    <inline nameSpaceName="yellow-token-3" mapDEFToID="true" url='./models/YellowPawn.x3d'></inline>
+                </transform>
+
+                <transform id='yellow-token-4' translation="11 1 2" visible="false">
+                    <inline nameSpaceName="yellow-token-4" mapDEFToID="true" url='./models/YellowPawn.x3d'></inline>
+                </transform>
+
+
+                <!-- green tokens -->
+                <transform id='green-token-1' translation="11 1 11" visible="false">
+                    <inline nameSpaceName="green-token-1" mapDEFToID="true" url='./models/GreenPawn.x3d'></inline>
+                </transform>
+
+                <transform id='green-token-2' translation="12 1 12" visible="false">
+                    <inline nameSpaceName="green-token-2" mapDEFToID="true" url='./models/GreenPawn.x3d'></inline>
+                </transform>
+
+                <transform id='green-token-3' translation="12 1 11" visible="false">
+                    <inline nameSpaceName="green-token-3" mapDEFToID="true" url='./models/GreenPawn.x3d'></inline>
+                </transform>
+
+                <transform id='green-token-4' translation="11 1 12" visible="false">
+                    <inline nameSpaceName="green-token-4" mapDEFToID="true" url='./models/GreenPawn.x3d'></inline>
+                </transform>
+            </scene>
+        </x3d>
+    </main>
+
+    <side>
+        <div class="side-text">
+            <div id="info">Hello! Let the games begin.</div>
+            <div>Now playing:</div>
+            <div id="current-player">blue</div>
+        </div>
+
+        <div class="dice">
+            <div class="front">
+                <div class="dot"></div>
+            </div>
+            <div class="back">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="top">
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="bottom">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="right">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="left">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <button id="roll-button">Roll the dice</button>
+
+        <div class="scoreboard">
+            <div class="blue">
+                <div class="dot"></div>
+                <div class="value">0</div>
+            </div>
+            <div class="yellow">
+                <div class="dot"></div>
+                <div class="value">0</div>
+            </div>
+            <div class="green">
+                <div class="dot"></div>
+                <div class="value">0</div>
+            </div>
+            <div class="red">
+                <div class="dot"></div>
+                <div class="value">0</div>
+            </div>
+        </div>
+    </side>
+
+    <div class="dot-bg"></div>
+
+    <script type='text/javascript' src='./js/tileGenerator.js'> </script>
+</body>
+
+</html>

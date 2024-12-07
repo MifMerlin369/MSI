@@ -1,0 +1,408 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: comic sans ms, system-ui, sans-serif;
+  margin: 0;
+  background-image: url(../assets/images/background.png);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  color: azure;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#title-on-board {
+  max-height: 150px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#game-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+#message {
+  font-size: 25px;
+  margin-top: 30px;
+  max-width: 600px;
+  height: 70px;
+  background-color: rgba(14, 32, 1, 0.5);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  }
+
+.player-names {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 600px;
+  margin: 0;
+}
+
+.player-name {
+  margin: 0;
+  background-color: rgba(14, 32, 1, 0.5);
+}
+
+.dice-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 250px;
+  margin: 10px;
+}
+.dice {
+  background-color: transparent;
+  border: none;
+  width: 70px;
+  height: 70px;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+.d1 {
+  background-image: url("../assets/images/dice/dice1.png");
+  background-size: cover;
+}
+.d2 {
+  background-image: url("../assets/images/dice/dice2.png");
+  background-size: cover;
+}
+.d3 {
+  background-image: url("../assets/images/dice/dice3.png");
+  background-size: cover;
+}
+.d4 {
+  background-image: url("../assets/images/dice/dice4.png");
+  background-size: cover;
+}
+.d5 {
+  background-image: url("../assets/images/dice/dice5.png");
+  background-size: cover;
+}
+.d6 {
+  background-image: url("../assets/images/dice/dice6.png");
+  background-size: cover;
+}
+
+#board {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 600px;
+  aspect-ratio: 1/1;
+}
+
+.flr {
+  height: auto;
+  width: 100%;
+  display: flex;
+}
+
+.depot {
+  width: 40%;
+  height: 40%;
+  border: 50px solid;
+  outline: 2px solid;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.big-sqr {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid;
+  flex-wrap: wrap;
+  width: 140px;
+  height: 140px;
+  padding: 20px;
+  gap: 10px;
+  background-color: antiquewhite;
+}
+
+.small-sqr {
+  border: 2px solid;
+  height: 30px;
+  width: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+}
+
+#green-big .small-sqr {
+  background-color: #6f2da8;
+}
+
+#red-big .small-sqr {
+  background-color: #e60012;
+}
+
+#yellow-big .small-sqr {
+  background-color: #ffa812;
+}
+
+#blue-big .small-sqr {
+  background-color: #0082c8;
+}
+
+#green-player {
+  border-color: #6f2da8;
+}
+
+#yellow-player {
+  border-color: #ffa812;
+}
+
+#red-player {
+  border-color: #e60012;
+}
+
+#blue-player {
+  border-color: #0082c8;
+}
+
+#yellow-gateway,
+#red-gateway {
+  display: flex;
+  flex-wrap: wrap;
+  width: 120px;
+}
+
+#green-gateway,
+#blue-gateway {
+  display: flex;
+  flex-wrap: wrap;
+  width: 240px;
+}
+
+.path,
+.ylw-path,
+.red-path,
+.grn-path,
+.blu-path {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1/1;
+  border: 2px solid;
+  background: antiquewhite;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  /* overflow: visible;
+  z-index: 1; */
+  /* position: relative; */
+}
+
+.ylw-path {
+  background-color: #ffa812;
+}
+
+.red-path {
+  background-color: #e60012;
+}
+
+.grn-path {
+  background-color: #6f2da8;
+}
+
+.blu-path {
+  background-color: #0082c8;
+}
+
+#homes {
+  width: 120px;
+  height: 120px;
+  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("../assets/images/home.png");
+  background-size: cover;
+}
+
+#home1,
+#home3 {
+  display: flex;
+  justify-content: center;
+}
+
+#home2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home {
+  border: none;
+  background-color: transparent;
+}
+
+.piece {
+  width: 100%;
+  cursor: pointer;
+  /* z-index: 2; */
+  /* position: relative; */
+}
+
+.piece:hover {
+  width: 150%;
+  /* z-index: 100; */
+}
+
+.btn {
+  font-size: 20px;
+  font-family: comic sans ms, system-ui, sans-serif;
+  margin: 20px;
+  font-weight: bold;
+  width: 200px;
+  height: 35px;
+  border-radius: 8px;
+  border: none;
+  background-color: #66FF66;
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+.btn:hover {
+  background-color: rgba(59, 177, 104, 0.911);
+  color: white;
+}
+
+.btn[disabled]:hover {
+  background-color: gainsboro;
+}
+
+.multi {
+  width: 50%;
+}
+
+.overlay {
+  position: fixed; /*Sit on top of the page content*/
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  /* top: 0; /* sets vertical position of the overlay from top */
+  /*left: 0; sets the horizontal position of the overlay from left */
+  background: rgba(14, 32, 1, 0.7); /* Black background with opacity */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px); /* Blurs the background*/
+}
+
+#mode {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50%;
+  gap: 40px;
+}
+
+.title {
+  max-width: 500px;
+}
+
+#icons {
+  max-width: 600px;
+  max-height: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+.icon {
+  width: 100px;
+}
+
+.icon:hover {
+  border: 10px solid transparent;
+
+}
+
+select {
+  font-size: 20px;
+  font-family: comic sans ms, system-ui, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer; /* Add a pointer on hover */
+  display: block;
+  height: 35px;
+  border-radius: 10px;
+  background-color: #66FF66;
+}
+
+select:hover {
+  background-color: rgba(59, 177, 104, 0.911);
+  color: white;
+}
+
+#instructions {
+  z-index: 2; /*Specify a stack order*/
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+#how-to-play {
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+}
+
+#title-screen {
+  z-index: 4;
+  gap: 50px;
+}
+
+.text-on-overlay {
+  color: white;
+  text-decoration: underline;
+}
+
+h3 {
+  color: white;
+  text-align: left;
+}
+
+.instr-list {
+  color: white;
+  font-size: 12px;
+  text-wrap: wrap;
+  max-width: 600px;
+}
+
+#tldr {
+  font-size: 20px;
+}
+
+#link-instr {
+  color: #66FF66;
+}

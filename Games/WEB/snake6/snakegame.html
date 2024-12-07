@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Snake Game</title>
+    <style>
+
+    html, body {
+    height: 100%;
+    margin: 0;
+    background: black;
+    overflow: hidden;
+    font-family: Arial black;
+    background-image: url(snake.jpg);
+    background-position: center;
+    background-size: cover;
+    }
+    p{
+      font-family: Arial;
+    }
+    #pause-start {
+      font-family: Arial black;
+      font-size: 12px;
+      text-shadow:0px 0px 0px black;
+      display: inline;
+    }
+    .game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    position: relative;
+    }
+    canvas {
+    border: 2px solid white;
+    background-color: #191919;box-shadow: 1px -1px 28px -7px rgba(0,0,0,1);
+    -webkit-box-shadow: 1px -1px 28px -7px rgba(0,0,0,1);
+    -moz-box-shadow: 1px -1px 28px -7px rgba(0,0,0,1);
+    }
+    h1,img, .head {
+    position:relative;
+    margin:0 auto;
+    clear:left;
+    height:auto;
+    z-index: 0;
+    text-align:center;
+    margin-top: 25px;
+    }​
+    .button:hover {opacity: 1}
+
+    </style>
+  </head>
+  <body>
+    <button class="button" style="position: absolute; left: 0; margin: 35px; background-color: black; color: white; border: 2px solid white;" onclick="javascript:window.close()">Exit</button>
+    <center>  <img src="logo.png" width="150" height="200"> </center> <br>
+    <div class="head"> <p id="score" style="color: white; margin-top: -30px;"> <b> Score: </b> 0 </p> <p id="pause-start" style="color: Green; margin-top: -5px;">( Click space to PAUSE )</p> </div> <br>
+
+
+    <div class="game">
+      <canvas width="400" height="400" id="game"></canvas>
+    </div>
+
+  <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Table Tennis Game</title>
+    </head>
+    <body style="background-color:black">
+        <button onClick="showhide()" style="position: absolute; left: 0; margin-left: 25px; border-radius: 50%; background: black; border: 2px solid white; color: white;">i</button>
+        <p id="help" style="background: white; position: absolute; left: 0; top: 40px; margin-left: 25px; padding: 15px; display: none;">
+            <b> Move cursor to move the bat up and down. <br> First one to reach 10 points Wins! </b>
+        </p>
+        <h1 align="center" style="color:white; font-family: Arial black; margin-top: 20px;">Table Tennis Game</h1> <br>
+        <canvas style="margin-left:24%; margin-top:0%; border: 5px solid white;" id = "gameCanvas" width = "800" height = "600" ></canvas>
+        <button type="button" style="position: absolute; right:0; top:0; margin:25px; background: black; border: 2px solid white; color: white; border-radius: 50%;" onclick="javascript:window.close()">Close</button>
+        <script>
+        var canvas;
+        var canvasContext;
+        var ballX = 50;
+        var ballY = 50;
+        var ballSpeedX = 10;
+        var ballSpeedY = 4;
+        var paddle1Y = 250;   //your paddle
+        var paddle2Y = 250;  //computer's paddle
+        const PADDLE_HEIGHT = 100;
+        const PADDLE_WIDTH = 10;
+        var playerScore = 0;
+        var computerScore = 0;
+        const WINNING_SCORE = 10; //player to reach 10 points first is the winner
+        var showingWInScreen = false;
+        //This function to show and hide the Help menu.
+        function showhide(){
+            var xv = document.getElementById("help");
+            if (xv.style.display=="none") { xv.style.display = "block"; }
+            else { xv.style.display = "none"; }
+        }
+        //Function for the coordinates of mouse pointer.
+        function calculateMousePos(event){
+        var rect = canvas.getBoundingClientRect();
+        var root = document.documentElement;
+        var mouseX = event.clientX - rect.left - root.scrollLeft;
+        var mouseY = event.clientY - rect.top - root.scrollTop;
+        return {
+        x:mouseX,
+        y:mouseY
+        };
+        }
+        //This function will check if the game is finished or not if it is than reset everything
+        function handleMouseClick(event){
+        if(showingWInScreen){
+        playerScore = 0;
+        computerScore = 0;
+        showingWInScreen = false;
+        }
+        }
+        window.onload = function(){
+        canvas = document.getElementById('gameCanvas');
+        canvasContext = canvas.getContext('2d');
+        var framesPerSecond = 30;
+        setInterval(function(){
+        moveEverything();
+        drawEverything();
+        }, 1000/framesPerSecond);
+        canvas.addEventListener('mousedown', handleMouseClick);
+        canvas.addEventListener('mousemove', function(event){//for movement of player paddle with mouse
+        var mousePos = calculateMousePos(event);
+        paddle1Y = mousePos.y;
+        });
+        }
+        //Function to reset the ball
+        function ballReset(){
+        if(playerScore >= WINNING_SCORE || computerScore >= WINNING_SCORE){
+        showingWInScreen = true;//to reset ball after winning
+        }
+        ballSpeedX = -ballSpeedX;
+        ballX = canvas.width/2;//respawning the ball from the middle
+        ballY = canvas.height/2;
+        }
+        //This function is move the computer (it is basically moving the paddle up  and down in a similar pattern)
+        function computerMovement(){
+        var paddle2YCenter = paddle2Y + (PADDLE_HEIGHT/2);
+        if(paddle2YCenter < ballY-35){
+        paddle2Y = paddle2Y + 6;
+        }else if (paddle2YCenter > ballY+35){
+        paddle2Y = paddle2Y - 6;
+        }
+        }
+        //Function to count score
+        function moveEverything(){
+        if(showingWInScreen){
+        return;
+        }
+        computerMovement();
+        ballX = ballX + ballSpeedX;
+        ballY = ballY + ballSpeedY;
+        //when player scores
+        if(ballX < PADDLE_WIDTH){
+        if(ballY > paddle2Y-(PADDLE_HEIGHT/2) && ballY < (paddle2Y+PADDLE_HEIGHT/2)){
+        ballSpeedX = -ballSpeedX;
+        var deltaY = ballY - (paddle2Y+PADDLE_HEIGHT/2);
+        ballSpeedY = deltaY * 0.35;
+        }else{
+        playerScore++; //INCREMENT SCORE BEFORE RESETTING THE BALL
+        ballReset();//to reset ball after scoring a point
+        }
+        }
+        //when computer scores
+        if(ballX > canvas.width-PADDLE_WIDTH){
+        if(ballY > paddle1Y-(PADDLE_HEIGHT/2) && ballY < (paddle1Y+PADDLE_HEIGHT/2)){
+        ballSpeedX = -ballSpeedX;
+        var deltaY = ballY - (paddle1Y+PADDLE_HEIGHT/2);
+        ballSpeedY = deltaY * 0.35;
+        }else{
+        computerScore++;
+        ballReset();
+        }
+        }
+        if(ballY > canvas.height || ballY < 0){
+        ballSpeedY = -ballSpeedY;
+        }
+        }
+        //this function will create the net or the dotted line between the canvas
+        function drawNet(){
+        for(var i=0 ; i < canvas.height ; i+=40){
+        colorRect(canvas.width/2-1,i,2,20,'white');
+        }
+        }
+        //Function to create win screen
+        function drawEverything(){
+        colorRect(0,0,canvas.width,canvas.height,'black');
+        if(showingWInScreen){
+        canvasContext.fillStyle = 'white';
+        if(playerScore >= WINNING_SCORE){
+        canvasContext.fillText("YOU WIN",370,300);
+        }else if(computerScore >= WINNING_SCORE){
+        canvasContext.fillText("COMPUTER WINS",355,300);
+        }
+        canvasContext.fillText("CLICK TO CONTINUE",350,350);
+        return;
+        }
+        drawNet();
+        colorRect(0,(paddle2Y-(PADDLE_HEIGHT/2)), PADDLE_WIDTH,PADDLE_HEIGHT,'white');
+        colorRect((canvas.width-PADDLE_WIDTH),(paddle1Y-(PADDLE_HEIGHT/2)) ,PADDLE_WIDTH,PADDLE_HEIGHT,'white');
+        colorCircle(ballX, ballY, 8, 'white');
+        canvasContext.fillText(computerScore, 100, 100); canvasContext.fillText(playerScore, canvas.width-100, 100);
+        }
+        //Function for creating the paddles
+        function colorRect(leftX,topY,width,height,drawColor){
+        canvasContext.fillStyle = drawColor;//setting  paddle color
+        canvasContext.fillRect(leftX,topY,width,height);//to set dimensions of paddles
+        }
+        //Function for creating ball where parameters are the position ,radius and color of the ball
+        function colorCircle(centreX, centreY, radius, drawColor){
+        canvasContext.fillStyle = drawColor;
+        canvasContext.beginPath();
+        canvasContext.arc(centreX, centreY, radius, 0, Math.PI*2, true);//creating a path for ball
+        canvasContext.fill();
+        }
+        </script>
+    </body>
+</html>

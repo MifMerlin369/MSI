@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--ZAIDH IMRAN 13/10/2021-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Memory</title>
+        <link rel="stylesheet", href="style.css">
+    </head>
+    <body>
+        <div class="Memory">
+            <h2>Memory <span id="memoryID"></span></h2>
+            <button class="restartbutton" onClick="window.location.reload();">
+                Restart Game
+            </button>
+            <button class="exitbutton" onclick="window.open('', '_self', ''); window.close();">
+                Exit Game
+            </button>
+        </div>
+        <div class="frame169"> <!--Player 1 scoreboard-->
+            <img class="balloon" src="img/balloon.png">
+            <div class="Player1" data-id="P1">
+                <h2>Player 1</h2>
+                <h2>Score:   <span id="score1"></span></h2>
+            </div>
+        </div>
+        
+        <!--Grid with cards--> 
+        <!-- ff = front face, bb = backface-->
+        <section class="board">
+            <div class="card" data-id="2b">
+                <img class="ff" src="img/2.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="2b">
+                <img class="ff" src="img/2(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="2r">
+                <img class="ff" src="img/2(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="2r">
+                <img class="ff" src="img/2(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="3b">
+                <img class="ff" src="img/3.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="3b">
+                <img class="ff" src="img/3(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="3r">
+                <img class="ff" src="img/3(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="3r">
+                <img class="ff" src="img/3(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="4b">
+                <img class="ff" src="img/4.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="4b">
+                <img class="ff" src="img/4(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="4r">
+                <img class="ff" src="img/4(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="4r">
+                <img class="ff" src="img/4(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="5b">
+                <img class="ff" src="img/5.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="5b">
+                <img class="ff" src="img/5(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="5r">
+                <img class="ff" src="img/5(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="5r">
+                <img class="ff" src="img/5(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="6b">
+                <img class="ff" src="img/6.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="6b">
+                <img class="ff" src="img/6(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="6r">
+                <img class="ff" src="img/6(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="6r">
+                <img class="ff" src="img/6(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="7b">
+                <img class="ff" src="img/7.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="7b">
+                <img class="ff" src="img/7(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="7r">
+                <img class="ff" src="img/7(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="7r">
+                <img class="ff" src="img/7(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="8b">
+                <img class="ff" src="img/8.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="8b">
+                <img class="ff" src="img/8(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="8r">
+                <img class="ff" src="img/8(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="8r">
+                <img class="ff" src="img/8(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="9b">
+                <img class="ff" src="img/9.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="9b">
+                <img class="ff" src="img/9(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="9r">
+                <img class="ff" src="img/9(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="9r">
+                <img class="ff" src="img/9(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="10b">
+                <img class="ff" src="img/10.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="10b">
+                <img class="ff" src="img/10(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="10r">
+                <img class="ff" src="img/10(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="10r">
+                <img class="ff" src="img/10(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Jb">
+                <img class="ff" src="img/J.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Jb">
+                <img class="ff" src="img/J(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Jr">
+                <img class="ff" src="img/J(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Jr">
+                <img class="ff" src="img/J(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Qb">
+                <img class="ff" src="img/Q.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Qb">
+                <img class="ff" src="img/Q(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Qr">
+                <img class="ff" src="img/Q(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Qr">
+                <img class="ff" src="img/Q(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Kb">
+                <img class="ff" src="img/K.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Kb">
+                <img class="ff" src="img/K(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Kr">
+                <img class="ff" src="img/K(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Kr">
+                <img class="ff" src="img/K(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Ab">
+                <img class="ff" src="img/A.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Ab">
+                <img class="ff" src="img/A(3).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Ar">
+                <img class="ff" src="img/A(1).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Ar">
+                <img class="ff" src="img/A(2).png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Joker">
+                <img class="ff" src="img/Joker_1.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+            <div class="card" data-id="Joker">
+                <img class="ff" src="img/Joker_2.png"/>
+                <img class="bb" src="img/Card_Back.png"/>
+            </div>
+        </section>
+        <div class="frame170"> <!--Player 2 scoreboard-->
+            <img class="Rocket" src="img/rocket.png">
+            <div class="Player2" data-id="P2">
+                <h2>Player 2</h2>
+                <h2>Score: <span id="score2"></span></h2>
+            </div>
+        </div>
+        <script src="game.js"></script>
+    </body>
+</html>

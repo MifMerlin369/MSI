@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Hangman Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <div class="outside-wrapper">
+      <h1 id="statusMessage">Vanilla JavaScript Hangman Game </h1>
+
+    </div>
+
+    <div class="outside-wrapper">
+
+      <div class="inside-wrapper">
+
+        <svg version="1.1" id="hangknuckles" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 169.28 205" enable-background="new 0 0 169.28 205" xml:space="preserve">
+                    <g id="hanger">
+                        <line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="170.259" y1="203.446" x2="0.781" y2="203.001" />
+                        <line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="38.779" y1="2" x2="39.279" y2="202" />
+                        <line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="139.78" y1="4" x2="34.78" y2="2" />
+                        <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="138.78" y1="4" x2="135.78" y2="49" />
+                        <line fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="77.323" y1="2.51" x2="39.791" y2="28.042" />
+                    </g>
+                    <line id="show0" class="bodyPart hidden" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="136.78" y1="119" x2="148.78" y2="152" />
+                    <line id="show1" class="bodyPart hidden" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="137.78" y1="119" x2="114.78" y2="157" />
+                    <line id="show2" class="bodyPart hidden" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="136.78" y1="108" x2="99.28" y2="100.5" />
+                    <line id="show3" class="bodyPart hidden" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="136.78" y1="107" x2="166.28" y2="94.5" />
+                    <line id="show4" class="bodyPart hidden" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="137.78" y1="82" x2="136.78" y2="120.5" />
+                    <image overflow="visible" id="show5" class="bodyPart hidden" width="96" height="96" xlink:href="https://res.cloudinary.com/dshmwg7vw/image/upload/v1550434128/icons8-ugandan-knuckles-96.png" transform="matrix(0.5426 0 0 0.516 110.2271 42.9535)">
+                    </image>
+
+                </svg>
+
+      </div>
+      <div class="inside-wrapper">
+        <div>
+          <img id="life5" class="lives" src="https://res.cloudinary.com/dshmwg7vw/image/upload/v1550434128/icons8-ugandan-knuckles-96.png" alt="">
+          <img id="life4" class="lives" src="https://res.cloudinary.com/dshmwg7vw/image/upload/v1550434128/icons8-ugandan-knuckles-96.png" alt="">
+          <img id="life3" class="lives" src="https://res.cloudinary.com/dshmwg7vw/image/upload/v1550434128/icons8-ugandan-knuckles-96.png" alt="">
+          <img id="life2" class="lives" src="https://res.cloudinary.com/dshmwg7vw/image/upload/v1550434128/icons8-ugandan-knuckles-96.png" alt="">
+          <img id="life1" class="lives" src="https://res.cloudinary.com/dshmwg7vw/image/upload/v1550434128/icons8-ugandan-knuckles-96.png" alt="">
+          <img id="life0" class="lives" src="https://res.cloudinary.com/dshmwg7vw/image/upload/v1550434128/icons8-ugandan-knuckles-96.png" alt="">
+        </div>
+        <div>
+          <p id="wrongLetters" class="hidden">Wrong letters:<br> <span></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="outside-wrapper">
+      <div class="wrapper">
+        <p id="categoryName">Category:smtg</p>
+        <div id="guessWrapper">
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <input type="text" id="userLetter" maxlength="1" size="4" autocomplete="off">
+        <button type="button" id="guessButton">Guess</button>
+      </div>
+      <div class="wrapper warning">
+        <span id="warningText" class="hidden"> </span>
+      </div>
+    </div>
+    <div class="outside-wrapper">
+      <button type="button" id="newGame">New Game</button>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

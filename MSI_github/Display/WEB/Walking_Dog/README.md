@@ -1,0 +1,1 @@
+This project was created using `Sass Template` as a base. This template uses CSS to animate a walking dog. Pretty cool.

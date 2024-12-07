@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+        <body style="background-color:white;"></body>   <!--Background colour-->
+        <title></title>
+        <style>
+        body{
+        background-image: url('bg.jpg');
+        background-size: cover;
+        font-family: Montserrat;
+        }
+        #main{
+        width:1000px;
+        float:left;
+        }
+        .pawns{
+        width:30px;
+        height:30px;
+        border-radius:20px;
+        position:absolute;
+        }
+        #board{
+        background:url(Images/board.gif) no-repeat;
+        background-size:cover;
+        width:550px;
+        height:550px;
+        float:left;
+        margin-top:8px;
+        border: 5px solid black;
+        box-shadow: -1px -1px 43px 0px rgba(0,0,0,0.75);
+        }
+        #uselesstext1{
+        float:left;
+        padding-left:10px;
+        padding-right:10px;
+        }
+        #dice {
+        border: 5px solid black;
+        box-shadow: -1px -1px 43px 0px rgba(0,0,0,0.75);
+        }
+        footer{
+        font-size:larger;
+        color:darkred;
+        }
+        #uselesstext1 {
+        position: absolute;
+        color: white;
+        top: 25px;
+        left: 800px;
+        text-shadow: -1px 0px 8px rgba(0,0,0,0.78);
+        }
+        #player{
+        position: absolute;
+        top: 45px;
+        left: 810px;
+        text-shadow: -1px 0px 8px rgba(0,0,0,0.78);
+        }
+        #uselesstext2 {
+        position: absolute;
+        color: white;
+        top: 70px;
+        left: 810px;
+        text-shadow: -1px 0px 8px rgba(0,0,0,0.78);
+        }
+        #badtext{ position: absolute;
+        color: white;
+        top: 120px;
+        left: 810px;
+        text-shadow: -1px 0px 8px rgba(0,0,0,0.78);
+        }
+        </style>
+        <script src="Ludo-game.js"></script>
+    </head>
+    <body>
+        <div id="main">
+        	<audio id="diceSound">
+                <source src="dice.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="killedSound">
+                <source src="killed.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="stepSound">
+                <source src="step.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="winSound">
+                <source src="win.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div id="board"></div>
+            <div id="dice" onclick="randomNum(); playsound();" style="background-image:url(Images/dice.gif);background-size:contain; width:150px;height:150px; float:left; margin: 25px;"></div>
+            <!-- red pawns  start top 28 left 318-->  <!--Coordinates-->
+            <div class="pawns" id="redpawn1"    onclick="randomMove('red',1)"       style="background-color:red;top:149px;left:442px;"></div>
+            <div class="pawns" id="redpawn2"    onclick="randomMove('red',2)"       style="background-color:red;top:102px;left:395px;"></div>
+            <div class="pawns" id="redpawn3"    onclick="randomMove('red',3)"       style="background-color:red;top:55px;left:442px;"></div>
+            <div class="pawns" id="redpawn4"    onclick="randomMove('red',4)"       style="background-color:red;top:102px;left:490px;"></div>
+            <!-- yellow pawns  start top 523 left 218-->  <!--Coordinates-->
+            <div class="pawns" id="yellowpawn1" onclick="randomMove('yellow',1)"    style="background-color:yellow;top:451px;left:47px;"></div>
+            <div class="pawns" id="yellowpawn2" onclick="randomMove('yellow',2)"    style="background-color:yellow;top:451px;left:140px;"></div>
+            <div class="pawns" id="yellowpawn3" onclick="randomMove('yellow',3)"    style="background-color:yellow;top:404px;left:93px;"></div>
+            <div class="pawns" id="yellowpawn4" onclick="randomMove('yellow',4)"    style="background-color:yellow;top:498px;left:93px;"></div>
+            <!-- green pawns  start top 227 left 22-->  <!--Coordinates-->
+            <div class="pawns" id="greenpawn1"  onclick="randomMove('green',1)"     style="background-color:green;top:149px;left:93px;"></div>
+            <div class="pawns" id="greenpawn2"  onclick="randomMove('green',2)"     style="background-color:green;top:102px;left:140px;"></div>
+            <div class="pawns" id="greenpawn3"  onclick="randomMove('green',3)"     style="background-color:green;top:55px;left:93px;"></div>
+            <div class="pawns" id="greenpawn4"  onclick="randomMove('green',4)"     style="background-color:green;top:102px;left:47px;"></div>
+            <!-- blue pawns  start top 326 left 515-->  <!--Coordinates-->
+            <div class="pawns" id="bluepawn1"   onclick="randomMove('blue',1)"      style="background-color:blue;top:451px;left:490px;"></div>
+            <div class="pawns" id="bluepawn2"   onclick="randomMove('blue',2)"      style="background-color:blue;top:451px;left:395px;"></div>
+            <div class="pawns" id="bluepawn3"   onclick="randomMove('blue',3)"      style="background-color:blue;top:404px;left:442px;"></div>
+            <div class="pawns" id="bluepawn4"   onclick="randomMove('blue',4)"      style="background-color:blue;top:498px;left:442px;"></div>
+            <div class="text">
+                <h3 id="uselesstext1">It's </h3><h2 id="player" style="color:red">red</h3><br><br><h3 id="uselesstext2">  colour 's turn</h4>
+                <h5 id="badtext" style="float:left;"></h5>
+            </div>
+        </div>
+    </body>
+</html>

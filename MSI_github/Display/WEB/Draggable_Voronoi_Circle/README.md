@@ -1,0 +1,1 @@
+An animated voronoi diagram created using D3 v5. A Voronoi diagram shows the division of a plane into regions close to a set of objects. In this case the objects are points and each region shows the area closest to the contained point.

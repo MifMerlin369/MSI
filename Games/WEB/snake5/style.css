@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.landing-page {
+    text-align: center;
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.landing-page > h1 {
+    font-size: 80px;
+}
+
+.landing-page > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.landing-page img {
+    width: 100px;
+    margin: 20px;
+}
+
+.landing-page > button {
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    padding: 8px 40px;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.landing-page > button:hover {
+    background-color: rgb(210, 210, 210);
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+}
+
+.title {
+    width: 400px;
+    color: rgb(230, 230, 230);
+    position: relative;
+}
+
+.title > h1 {
+    font-size: 50px;
+}
+
+.title > p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title img {
+    width: 100px;
+    margin: 20px;
+}
+
+.title > button {
+    padding: 5px 30px;
+    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    border: 1px solid white;
+}

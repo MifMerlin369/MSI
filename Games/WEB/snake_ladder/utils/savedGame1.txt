@@ -1,0 +1,9 @@
+{"position":{"red":29,"green":54,"blue":72,"yellow":94,"computer":0},"turn":1,"players":4}
+
+{"position":{"red":34,"green":65,"blue":86,"yellow":99,"computer":0},"turn":3,"players":4}
+
+{"position":{"red": 99,"computer":0},"turn":0,"players":2}
+
+{"position":{"red":98,"green":99},"turn":0,"players":2}
+
+{"position":{"red":99,"green":100,"blue":98,"yellow":100,"computer":0},"turn":3,"players":4}

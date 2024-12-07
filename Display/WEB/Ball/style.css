@@ -1,0 +1,16 @@
+head,
+body {
+  font-size: 15pt;
+  background: #2E3369;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  outline: 1px solid #fff;
+  top: 0px;
+  left: 0px;
+}

@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #383838;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.clock {
+  margin-top: 2rem;
+  height: 300px;
+  width: 300px;
+  box-sizing: content-box;
+  border: rgba(255, 255, 255, 1) solid 5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: black;
+  /*box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.3),
+		-5px -5px 10px rgba(0, 0, 0, 0.7),
+		inset -10px -5px 10px rgba(0, 0, 0, 0.2);
+		*/
+  box-shadow: 0 0 10px 1px black,
+    -5px -5px 10px rgba(255, 255, 255, 0.3);
+}
+
+.clock:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 5px;
+  width: 5px;
+  background-color: #FF6FB5;
+  /* border: rgba(255, 255, 255, 0.6) solid 2px; */
+  box-shadow:
+    0 0 0 3px #FF6FB5;
+  border-radius: 50%;
+}
+
+.number {
+  position: absolute;
+  inset: 0.01rem;
+  text-align: center;
+  font-size: 0.5rem;
+  color: white;
+  transform: rotate(calc(6deg * var(--i)));
+}
+
+.number b {
+  display: inline-block;
+  color: white;
+  height: 10px;
+  width: 3px;
+  background-color: white;
+}
+
+.a12 {
+  background-color: #FF4545 !important;
+}
+
+.letter {
+  position: absolute;
+  z-index: 10;
+  color: white;
+  inset: 0.7rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+  transform: rotate(calc(30deg * var(--i)));
+}
+
+.letter b {
+  display: inline-block;
+  transform: rotate(calc(-30deg * var(--i)));
+
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: bottom;
+}
+
+.sec {
+  width: 1px;
+  height: 38.5%;
+  --clr: #FF6FB5;
+  background-color: var(--clr);
+}
+
+.min {
+  --clr: #55D8C1;
+  width: 3px;
+  height: 25%;
+  left: 49.5%;
+  transform: translateX(-50%);
+  background-color: var(--clr);
+  border-radius: 100px 100px 0 0;
+}
+
+.hour {
+  --clr: #F9D923;
+  width: 3px;
+  height: 15%;
+  background-color: var(--clr);
+  border-radius: 100px 100px 0 0;
+}
+
+.hand:after {
+  content: "";
+  background-color: var(--clr);
+  height: 25%;
+  width: 100%;
+  position: absolute;
+  top: 115%;
+  left: 50%;
+  transform: rotate(180deg);
+  transform: translate(-50%, -50%);
+  border-radius: 0 0 100px 100px;
+}
+
+.sec:after {
+  content: "";
+  position: absolute;
+  height: 15%;
+  width: 1px;
+  background-color: var(--clr);
+  transform: rotate(180deg);
+  top: 111%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0;
+}
+
+.sec:before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border: var(--clr) 1px solid;
+  border-radius: 50%;
+  background-color: transparent;
+  top: 122.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.digital {
+  margin-top: 2rem;
+  height: 50px;
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 12px;
+  gap: 2px;
+  position: relative;
+  border-radius: 200px;
+  box-shadow:
+    -2px -2px 5px black,
+    1px 1px 3px rgba(255, 255, 255, 0.3),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 3px black,
+    0 0 5px rgba(255, 103, 103, 1),
+    0 0 5px rgba(255, 103, 103, 1);
+}
+
+.time {
+  font-weight: 600;
+}
+
+.hours {
+  --clr: #F9D923;
+  color: var(--clr);
+}
+
+.minutes {
+  --clr: #55D8C1;
+  color: var(--clr);
+}
+
+.minutes:before {
+  content: ":";
+  position: absolute;
+  top: 48%;
+  left: 29.5%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.seconds {
+  --clr: #FF6FB5;
+  color: var(--clr);
+}
+
+.seconds:before {
+  content: ":";
+  position: absolute;
+  top: 48%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  color: rgba(42, 240, 96, 1);
+  animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.ampm {
+  font-size: 0.6rem;
+  color: white;
+}
+
+.date,
+.day {
+  height: auto;
+  width: 200px;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+}
+
+.day {
+  margin-top: 0.7rem;
+  font-size: 1.5rem;
+  color: cyan;
+  filter: drop-shadow(0 0 10px cyan) drop-shadow(0 0 11px cyan);
+}

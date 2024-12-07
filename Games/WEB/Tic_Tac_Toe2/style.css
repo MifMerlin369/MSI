@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: rgb(62, 11, 110);
+    height: 60px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    font-weight: 600;
+    font-size: 28px;
+    text-align: center;
+    color: white;
+    padding-top: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    font-stretch: expanded;
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 10vw);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.box {
+    border: 2px solid black;
+    font-size: 8vw;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgb(0, 0, 0.08);
+    border-width: 5px;
+    border-color: rgb(228, 127, 228);
+    border-style: inset;
+}
+
+.box:hover {
+    background-color: rgb(240, 227, 252);
+}
+
+.gameInfo {
+    padding: 0 34px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Baloo Da 2', cursive;
+    
+      
+}
+    li::selection {
+        color: rgb(228, 175, 228);
+        background-color: rgb(62, 11, 110);
+    }
+
+.info {
+    font-size: 22px;
+    text-align: center;
+    align-items: center;
+    font-weight: 600;
+    color: rgb(227 31 31);
+    user-select: none;
+}
+
+.imgBox img {
+    width: 0;
+    transition: width 1s ease-in-out;
+    margin-top: 22px;
+    margin-left: 20px;
+    user-select: none;
+}
+
+.br-0 {
+    border-right: 0;
+    border-color: rgb(228, 127, 228);
+
+}
+.bl-0 {
+    border-left: 0;
+    border-color: rgb(228, 127, 228);
+
+}
+.bt-0 {
+    border-top: 0;
+    border-color: rgb(228, 127, 228);
+
+}
+.bb-0 {
+    border-bottom: 0;
+    border-color: rgb(228, 127, 228);
+}
+
+#reset {
+    margin: 0 23px;
+    padding: 3px 14px;
+    background-color: rgb(220 203 237);
+    border-radius: 28px;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid rgb(73, 5, 73);
+    user-select: none;
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.line {
+    background-color: rgb(133, 70, 133);
+    width: 0;
+    height: 3px;
+    position: absolute;
+    transition: width 1s ease-in-out;
+    border-radius: 2px;
+}
+
+.winner {
+    display: none;
+    font-size: 112px;
+    position: absolute;
+    color: rgb(36 217 36);
+    font-family: "MedivalSharp", cursive;
+    margin-top: 141px;
+    margin-left: 20px;
+    transform: rotate(25deg);
+    transition: display 1.5s ease-in-out;
+    user-select: none;
+}
+
+.confetti {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 413px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    z-index: -1;
+}
+
+.start {
+    position: absolute;
+    height: 50px;
+    margin-top: 14%;
+    margin-right: 42%;
+    padding: 3px 14px;
+    background-color: rgb(220 203 237);
+    border-radius: 28px;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid rgb(73, 5, 73);
+    user-select: none;
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 100;
+}
+
+@media screen and (max-width: 800px) {
+    .gameContainer {
+        flex-wrap: wrap;
+    }
+    .gameInfo {
+        margin-top: 34px;
+    }
+    .gameInfo h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .gameText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .imgBox img{
+        width: 178px;
+        margin-left: 29%;
+    }
+    #reset {
+        margin: 7px 42px;
+        padding: 4px 14px;
+    }
+    .info {
+        color: rgb(227 31 31);
+        font-weight: 600;
+        text-align: center;
+    }
+    .container {
+        grid-template-columns: repeat(3, 20vw);
+        grid-template-rows: repeat(3, 20vw);
+    }
+}

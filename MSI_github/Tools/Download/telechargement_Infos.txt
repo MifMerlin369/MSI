@@ -1,0 +1,8 @@
+- DOWNLOARD: telecharger des fichier sur n'import oú sur internt (les videos, images, videos, musiques, documents etc.. avec plusieurs manières.
+
+- Utilisation de argparse : Au lieu de demander les entrées à l'utilisateur via input(), vous pouvez utiliser le module argparse pour accepter les entrées en ligne de commande. Cela rendra le programme plus facile à utiliser et plus flexible.
+
+- myspider, requests, aiohttp, scrapy, pandas, pytube, shutil, rclone, scp, git-clone, transmission-cli, 
+
+
+

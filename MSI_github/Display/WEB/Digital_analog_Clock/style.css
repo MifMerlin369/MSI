@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #2f363e;
+}
+
+.container {
+  position: relative;
+  left: 200px;
+  background: #2f363e;
+  height: 500px;
+  width: 600px;
+  box-shadow: 30px 25px 75px rgba(0, 0, 0, 0.75),
+    10px 10px 70px rgba(0, 0, 0, 0.25),
+    inset 5px 5px 10px rgba(123, 123, 123, 1),
+    inset 5px 5px 20px rgba(81, 81, 81, 1),
+    inset -5px -5px 15px rgba(81, 81, 81, 1);
+  border-top-left-radius: 800px;
+  border-top-right-radius: 820px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.clock {
+  position: relative;
+  right: 200px;
+  width: 600px;
+  bottom: 50px;
+  height: 400px;
+  background: #2f363e;
+  border-top: 1px solid red;
+  border-radius: 50%;
+  box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25),
+    inset 5px 5px 10px rgba(123, 123, 123, 1),
+    inset 5px 5px 20px rgba(123, 123, 123, 1),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock::before {
+  content: '';
+  position: absolute;
+  top: 190px;
+  left: 193px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2f363e;
+  border: 3px solid white;
+  z-index: 100000;
+}
+
+.clock span {
+  position: absolute;
+  inset: 20px;
+  color: white;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--i)))
+}
+
+.clock span b {
+  opacity: 0.3;
+  font-size: 2em;
+  font-weight: 800px;
+  transform: rotate(calc(-30deg * var(--i)));
+  display: inline-block;
+}
+
+.circle {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  left: 75px;
+  top: 75px;
+  border: 1px solid rgba(0, 0, 0, 0.76);
+  border-radius: 50%;
+  display: flex;
+  color: rgba(66, 148, 121, 1);
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+}
+
+.circle i {
+  position: absolute;
+  width: 8px;
+  height: 50%;
+  background: var(--clr);
+  transform-origin: bottom;
+  transform: scaleY(0.5);
+}
+
+.circle:nth-child(1) i {
+  width: 2px;
+}
+
+.circle:nth-child(2) i {
+  width: 7px;
+}
+
+.circle2 {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 200px;
+  height: 200px;
+  z-index: 9;
+
+}
+
+.circle3 {
+  left: 125px;
+  top: 125px;
+  width: 150px;
+  height: 150px;
+  z-index: 8;
+
+}
+
+.circle::before {
+  content: '';
+  position: absolute;
+  top: -8.5px;
+  width: 15px;
+  height: 15px;
+  background: var(--clr);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--clr),
+    0 0 60px var(--clr);
+}
+
+/*Digital clock style */
+#time {
+  display: flex;
+  position: absolute;
+  inset: 20px;
+  left: 300px;
+  top: 800px;
+  font-size: 2em;
+  font-family: 'Pristina';
+  font-weight: 100px;
+  border: 1px solid rgba(52, 52, 52, 1);
+  width: 200px;
+  height: 50px;
+  background: black;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.75);
+  color: red;
+}
+
+#time div {
+  position: relative;
+  width: 60px;
+  left: 15px;
+  display: flex;
+  text-align: center;
+  font-weight: 400px;
+  color: var(--clr);
+}
+
+#time div:nth-child(1)::after,
+#time div:nth-child(2)::after {
+  content: ':';
+  position: absolute;
+  right: 3px;
+}
+
+#time div:last-child {
+  font-size: 0.5em;
+  justify-content: center;
+  position: relative;
+  left: -4px;
+  align-items: center;
+  color: fuchsia;
+}
+
+#time div:nth-child(2)::after {
+  animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 1;
+    color: red;
+  }
+
+  50% {
+    opacity: 0;
+    color: blue;
+  }
+
+  100% {
+    color: antiquewhite;
+  }
+}
+
+a {
+  position: absolute;
+  right: 100px;
+  bottom: 700px;
+  left: 350px;
+  top: 100px;
+  color: rgba(0, 255, 64, 1);
+}
