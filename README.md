@@ -1,10 +1,11 @@
 # MSI Project
 
-**Description :** MSI est un projet complet comprenant des outils pour CLI, GUI, WEB et bien plus. Ce projet intègre différentes interfaces pour la ligne de commande (CLI), graphique (GUI), ainsi que des fonctionnalités web, destinées à fournir un cadre flexible pour diverses applications.
+**Description:** MSI is a cross-platform interactive shell that integrates multiple CLI, GUI, and WEB tools, offering auto-completion, asynchronous execution, and customization for simplified and centralized management of scripts and programs. This project allows you to easily execute commands and automate tasks across different interfaces.
 
 ## Modules principaux :
-- `MSI.py` : Point d'entrée principal du projet. Ce fichier regroupe les fonctionnalités de base pour l'exécution du projet.
+- `MSI.py` : The main entry point of the project. This file contains the core functionalities for running the project.
+
 ## Installation :
-1. Clonez le dépôt :
+1. Clone the repository:
    ```bash
    git clone https://github.com/MifMerlin369/MSI.git
