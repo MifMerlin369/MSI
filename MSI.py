@@ -227,7 +227,8 @@ class MSI:
     def locals_command(self, command):
         commands = {
         #"msi --help": self.help_msi,
-        "msi": self.msg_logo,
+        "msi -p": self.msg_logo,
+        "msi --prompt": self.msg_logo,
         "history": self.show_history,
         "history -c": self.clear_history,
         

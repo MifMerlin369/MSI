@@ -4,41 +4,34 @@ def help_msi():
     console = Console()
 
     help_text = """
-    [bold cyan]MSI Shell[/]
-    ---------------------------------
-    [bold]MSI[/] Shell est un environnement de ligne de commande personnalisé offrant une variété de fonctionnalités
-    2e ligne
-    3e ligne
+[bold cyan]MSI Shell - User Guide[/]
+--------------------------------------------
+[bold]MSI Shell[/] is a customized command-line environment offering a variety of features to simplify command management and execution.
 
-    [bold]Commandes :[/]
-    # uniquement les commande  de guide
-     . msi -h, msi --help           : Affiche cette aide.
-     . msi -p, msi --prompt : changer l'invite.
-     . msi -c, msi --cmd :  Affiche liste des programmes msi.
+[bold]Main Commands:[/]
+  - [bold]msi -h[/], [bold]msi --help[/]       : Displays this help menu.
+  - [bold]msi -p[/], [bold]msi --prompt[/]    : Changes the command prompt.
+  - [bold]msi -c[/], [bold]msi --cmd[/]       : Lists available MSI programs.
 
-    [bold]Fonctionnalités :[/]
-     . Auto-completion      : Auto-complétion des commandes système et des chemins de fichiers, réduisant ainsi
-                             les erreurs de frappe et accélérant la navigation.
-      .  Historique des commandes : Suivi des commandes précédemment exécutées pour un rappel et une réutilisation rapide.
-     . Mode mot de passe    : Masque les entrées pour des saisies sécurisées, idéal pour les mots de passe et autres
-                             informations sensibles.
+[bold]Features:[/]
+  - [bold]Auto-completion[/]         : Automatically completes system commands and file paths, reducing errors and speeding up navigation.
+  - [bold]Command history[/]         : Tracks previously executed commands for quick recall and reuse.
+  - [bold]Password mode[/]           : Masks input for secure entries, ideal for sensitive information like passwords.
 
-    [bold]Raccourcis clavier :[/]
-     . Ctrl + Espace        : Active/Désactive l'auto-complétion pendant la frappe.
-     . Ctrl + T             : Active/Désactive le mode ghost (les entrées sont masquées).
-     . Ctrl + h             : .....
+[bold]Keyboard Shortcuts:[/]
+  - [bold]Ctrl + Space[/] : Toggles auto-completion on/off.
+  - [bold]Ctrl + T[/]     : Toggles "ghost" mode (input masking).
+  - [bold]Ctrl + H[/]     : Opens the quick help menu.
 
-    [bold]Informations supplémentaires :[/]
-    [cyan]- MSI Shell est conçu pour…
-     . Lignes 2
-     . Vous pouvez envoyez vos code pour ajouter dans MSI. Cela augmentera sa…
-     . Compatible avec les systèmes Unix et Windows.
+[bold]Additional Information:[/]
+  - [cyan]MSI Shell is designed to provide an intuitive and powerful interface for running scripts and commands.[/]
+  - [bold]Documentation:[/] [cyan]https://github.com/MifMerlin369/MSI[/]
 
-    Pour toute autre question ou assistance, veuillez consulter la documentation ou les fichiers d'aide supplémentaires.
-    [bold italic]MSI…[/][/]
+For any questions or assistance, please refer to the online documentation or the included help files.
+
+[bold italic cyan]Explore endless possibilities with MSI![/]
     """
     console.print(help_text)
 
 if __name__ == "__main__":
     help_msi()
-
