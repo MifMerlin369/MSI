@@ -1,5 +1,9 @@
-# MSI:
-**Description:** MSI is a cross-platform interactive shell that integrates multiple CLI, GUI, and WEB tools, offering auto-completion, asynchronous execution, and customization for simplified and centralized management of scripts and programs. This project allows you to easily execute commands and automate tasks across different interfaces.
+# MSI
+
+**Description:**  
+MSI is a cross-platform interactive shell that integrates multiple CLI, GUI, and WEB tools, offering auto-completion, asynchronous execution, and customization for simplified and centralized management of scripts and programs. This project allows you to easily execute commands and automate tasks across different interfaces.  
+
+**Note:** This is not the complete program. Several additional tools are integrated into this shell but are not included in the version currently available on GitHub.  
 
 ## Main Modules:
 - `MSI.py` : The main entry point of the project. This file contains the core functionalities for running the project.
@@ -14,6 +18,3 @@ I am looking for contributors to help add new tools and features to the shell. I
    cd MSI
    pip install -r MSI_requirement.txt
    python MSI.py
-
-
-
