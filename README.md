@@ -9,7 +9,8 @@ MSI is a powerful and versatile cross-platform interactive shell designed to str
 - `MSI.py` : The main entry point of the project. This file contains the core functionalities for running the project.
 
 ## Contributing:
-I am looking for contributors to help add new tools and features to the shell. If you're interested in contributing, feel free to **fork** the repository, create a new branch, and submit a **pull request.** Your ideas and contributions will help enhance the functionality of MSI by integrating more tools into the shell, making it even more powerful and versatile.
+We are looking for contributors to enrich MSI by adding new tools and features to the shell. Whether you're an experienced developer or a beginner, your contributions are crucial for advancing this project! Feel free to **fork** the repository, create a branch for your modifications, and submit a **pull request**. Together, we will make MSI even more powerful and versatile, transforming it into a comprehensive platform for executing commands, automating tasks, and seamlessly integrating various tools. Every idea and effort will contribute to the growth and improvement of this collaborative project.
+
 
 ## Installation:
 1. Clone the repository:
