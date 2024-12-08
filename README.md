@@ -11,3 +11,9 @@ I am looking for contributors to help add new tools and features to the shell. I
 1. Clone the repository:
    ```bash
    git clone https://github.com/MifMerlin369/MSI.git
+   cd MSI
+   pip install -r MSI_requirement.txt
+   python3 MSI.py
+
+
+
