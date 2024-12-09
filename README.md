@@ -35,8 +35,8 @@ Screenshots of MSI in action:
 
 ![Image 3: Terminal Commands](Screenshot/Screenshot_kali1.png)
 *Usage of Commands.*
-![Image 4: Terminal Commands](Screenshot/Screenshot_kali4.png)
-*Usage of Commands.*
+![Image 4: System and MSI Commands](Screenshot/Screenshot_kali4.png)
+*Executing both system commands and its own custom commands..*
 
 ![Image 6: MSI on Termux](Screenshot/Screenshot_termux3.jpg)
 *Running MSI on Termux..*
