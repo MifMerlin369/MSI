@@ -23,7 +23,7 @@ We are looking for contributors to enrich MSI by adding new tools and features t
 
 ## Demonstrations
 
-screenshots of MSI in action:
+Screenshots of MSI in action:
 
 ![Image 1: help -h](Screenshot/Screenshot_kali_helpmsi.png)
 *msi help command.*
@@ -36,7 +36,7 @@ screenshots of MSI in action:
 ![Image 4: Terminal Commands](Screenshot/Screenshot_kali4.png)
 *Usage of Commands.*
 
-![Image 5: MSI on Termux](Screenshot/Screenshot_termux3.png.png)
+![Image 5: MSI on Termux](Screenshot/Screenshot_termux3.png)
 *Running MSI on Termux...*
 ![Image 6: MSI on Termux](Screenshot/msi_termux_video.gif)
 *Running MSI on Termux..*
