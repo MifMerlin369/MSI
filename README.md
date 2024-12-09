@@ -30,6 +30,8 @@ Screenshots of MSI in action:
 
 ![Image 2: Snake Game in Browser](Screenshot/Screenshot_kali_snake_game_in_browser.png)
 *Showcasing how MSI interacts with web programs..*
+![Image 2: web programs](Screenshot/Screenshot_kali_open_htmlFile2.png)
+*Showcasing how MSI interacts with web programs..*
 
 ![Image 3: Terminal Commands](Screenshot/Screenshot_kali1.png)
 *Usage of Commands.*
