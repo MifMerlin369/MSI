@@ -19,3 +19,28 @@ We are looking for contributors to enrich MSI by adding new tools and features t
    cd MSI
    pip install -r MSI_requirement.txt
    python MSI.py
+
+
+## Demonstrations
+
+screenshots of MSI in action:
+
+![Image 1: help -h](Screenshot/Screenshot_kali_helpmsi.png)
+*msi help command.*
+
+![Image 2: Snake Game and other in Browser](Screenshot/Screenshot_kali_snake_game_in_browser.png, Screenshot_kali_open_htmlFile.png, Screenshot_kali_open_htmlFile2.png)
+*Showcasing how MSI interacts with web programs..*
+
+![Image 3: Terminal Commands](Screenshot/Screenshot_kali1.png.png)
+*Usage of Commands.*
+![Image 4: Terminal Commands](Screenshot/Screenshot_kali4.png.png)
+*Usage of Commands.*
+
+![Image 5: MSI on Termux](Screenshot/Screenshot_termux3.png.png)
+*Running MSI on Termux...*
+![Image 6: MSI on Termux](Screenshot/msi_termux_video.gif)
+*Running MSI on Termux..*
+
+
+
+
