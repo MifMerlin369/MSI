@@ -230,7 +230,6 @@ class MSI:
         "msi --prompt": self.msg_logo,
         "history": self.show_history,
         "history -c": self.clear_history,
-        "history --clear": self.clear_history,
         
     }
         current_dir = os.getcwd()
