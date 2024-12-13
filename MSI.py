@@ -138,7 +138,7 @@ class MSI:
         self.complete_while_typing = not self.complete_while_typing
     
     def ghost(self):
-        self.is_ghost = not self.is_ghost    
+        self.is_ghost = not self.is_ghost
 
     # deux commandes dictionnaire sur meme lignrs ne fo,ctionne pas, sauf si une commande systeme est en premier posistion.
     # es autres dictionnaires ne sont pas inclus.
@@ -230,9 +230,9 @@ class MSI:
         "msi --prompt": self.msg_logo,
         "history": self.show_history,
         "history -c": self.clear_history,
+        "history --clear": self.clear_history,
         
     }
-
         current_dir = os.getcwd()
         if command in commands:
             commands[command]()
