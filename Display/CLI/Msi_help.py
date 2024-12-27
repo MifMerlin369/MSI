@@ -4,24 +4,23 @@ def help_msi():
     console = Console()
 
     help_text = """
-[bold cyan]MSI Shell - User Guide[/]
+[bold cyan]MSI Shell[/]
 --------------------------------------------
 [bold]MSI Shell[/] is a customized command-line environment offering a variety of features to simplify command management and execution.
 
 [bold]Main Commands:[/]
-  - [bold]msi -h[/], [bold]msi --help[/]       : Displays this help menu.
-  - [bold]msi -p[/], [bold]msi --prompt[/]    : Changes the command prompt.
-  - [bold]msi -c[/], [bold]msi --cmd[/]       : Lists available MSI programs.
+ [bold]msi -h/ --help[/]      : Displays this help menu.
+ [bold]msi -p/ --prompt[/]    : Changes the command prompt.
+ [bold]msi -c/ --cmd[/]       : Lists available MSI programs.
 
 [bold]Features:[/]
-  - [bold]Auto-completion[/]         : Automatically completes system commands and file paths, reducing errors and speeding up navigation.
-  - [bold]Command history[/]         : Tracks previously executed commands for quick recall and reuse.
-  - [bold]Password mode[/]           : Masks input for secure entries, ideal for sensitive information like passwords.
+ [bold]Auto-completion[/]         : Automatically completes system commands and file paths, reducing errors and speeding up navigation.
+ [bold]Password mode[/]           : Masks input for secure entries, ideal for sensitive information like passwords.
 
 [bold]Keyboard Shortcuts:[/]
-  - [bold]Ctrl + Space[/] : Toggles auto-completion on/off.
-  - [bold]Ctrl + T[/]     : Toggles "ghost" mode (input masking).
-  - [bold]Ctrl + H[/]     : Opens the quick help menu.
+ [bold]Ctrl + Space[/]     : Toggles auto-completion on/off.
+ [bold]Ctrl + T[/]         : Toggles "ghost" mode (input masking).
+ [bold]Ctrl + H[/]         : Opens the quick help menu.
 
 [bold]Additional Information:[/]
   - [cyan]MSI Shell is designed to provide an intuitive and powerful interface for running scripts and commands.[/]
